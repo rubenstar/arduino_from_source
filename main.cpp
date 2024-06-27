@@ -1,8 +1,6 @@
 #include "Arduino.h"
 
 extern USBDeviceClass USBDevice;
-
-// Initialize C library
 extern "C" void __libc_init_array(void);
 
 int main()
@@ -14,10 +12,8 @@ int main()
     // This calls constructors in variant.cpp (All SERCOM stuff)
     __libc_init_array();
 
-#if defined(USBCON)
     USBDevice.init();
     USBDevice.attach();
-#endif
 
     pinMode(LED_BUILTIN, OUTPUT);
     Serial.begin(115200);
