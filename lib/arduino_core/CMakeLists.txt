@@ -33,6 +33,7 @@ add_library(arduinoLib
     ${SAMD_DIR}/libraries/Wire/Wire.cpp           # I think thats I2C
     ${ARDUINO_API_DIR}/api/PluggableUSB.cpp       # As the name says
     ${ARDUINO_API_DIR}/api/Print.cpp              # Standard print methods
+    ${ARDUINO_API_DIR}/api/String.cpp
 )
 
 target_include_directories(arduinoLib PUBLIC #PUBLIC means that the include directories are propagated to the users of the library
