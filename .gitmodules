@@ -1,12 +1,12 @@
 [submodule "source/libraries/3rd_party/CMSIS_5"]
 	path = lib/arduino_core/CMSIS_5
 	url = git@github.com:ARM-software/CMSIS_5.git
-[submodule "source/libraries/3rd_party/ArduinoCore-samd"]
-	path = lib/arduino_core/ArduinoCore-samd
-	url = git@github.com:rubenstar/ArduinoCore-samd.git
 [submodule "source/libraries/3rd_party/ArduinoModule-CMSIS-Atmel"]
 	path = lib/arduino_core/ArduinoModule-CMSIS-Atmel
 	url = git@github.com:arduino/ArduinoModule-CMSIS-Atmel.git
-[submodule "source/libraries/3rd_party/ArduinoCore-API"]
+[submodule "lib/arduino_core/ArduinoCore-API"]
 	path = lib/arduino_core/ArduinoCore-API
-	url = git@github.com:rubenstar/ArduinoCore-API.git 
+	url = git@github.com:arduino/ArduinoCore-API.git
+[submodule "lib/arduino_core/ArduinoCore-samd"]
+	path = lib/arduino_core/ArduinoCore-samd
+	url = git@github.com:arduino/ArduinoCore-samd.git
