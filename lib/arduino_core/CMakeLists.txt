@@ -14,6 +14,9 @@ add_compile_definitions(USB_PID=0x8057)
 add_compile_definitions(USB_MANUFACTURER="Arduino LLC")
 add_compile_definitions(USB_PRODUCT="Arduino NANO 33 IoT")
 
+# Misc build flags
+add_compile_definitions(F_CPU=48000000L)
+
 # CORTEX-M0+ build library
 add_library(arduinoLib
     ${SAMD_DIR}/cores/arduino/cortex_handlers.c   # Vector table defined here
@@ -31,6 +34,7 @@ add_library(arduinoLib
     ${SAMD_DIR}/cores/arduino/USB/USBCore.cpp     # Serial/USB related stuff
     ${SAMD_DIR}/variants/nano_33_iot/variant.cpp  # Nano33 pin description
     ${SAMD_DIR}/libraries/Wire/Wire.cpp           # I think thats I2C
+    ${SAMD_DIR}/libraries/SPI/SPI.cpp             # I think thats SPI
     ${ARDUINO_API_DIR}/api/PluggableUSB.cpp       # As the name says
     ${ARDUINO_API_DIR}/api/Print.cpp              # Standard print methods
     ${ARDUINO_API_DIR}/api/String.cpp
@@ -39,6 +43,7 @@ add_library(arduinoLib
 target_include_directories(arduinoLib PUBLIC #PUBLIC means that the include directories are propagated to the users of the library
     ${ARDUINO_CMSIS_DIR}/                       # samd.h 
     ${ARDUINO_CMSIS_DIR}/samd21/include         # samd21xxx.h 
+    ${SAMD_DIR}/libraries/SPI                   # SPI.h
     ${SAMD_DIR}/variants/nano_33_iot            # variant.h
     ${SAMD_DIR}/cores/arduino                   # arduino.h / WVariant.h
     ${SAMD_DIR}/cores/arduino/USB               # All USB related headers
