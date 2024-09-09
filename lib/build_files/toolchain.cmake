@@ -32,7 +32,7 @@ set(COMPILE_FLAGS
 #    -pedantic;             # Enable pedantic warnings
     -MD;                    # Generate dependency output file (a xxx.obj.d file for every xxx.obj file)
     -ffunction-sections;    # Place each function in its own section (e.g. foo() will be put into .text.foo)
-
+    -fdata-sections;        # Place each data in its own section
 )
 
 # "-Wl,option" passes the option to the linker
