@@ -1,11 +1,3 @@
-# ARM SAMD21 family
-set (SAMD_DIR ${ARDUINO_FROM_SOURCE_DIR}/lib/arduino_core/ArduinoCore-samd)
-# ARM CMSIS
-set (ARM_CMSIS_DIR ${ARDUINO_FROM_SOURCE_DIR}/lib/arduino_core/CMSIS_5)
-set (ARDUINO_CMSIS_DIR ${ARDUINO_FROM_SOURCE_DIR}/lib/arduino_core/ArduinoModule-CMSIS-Atmel/CMSIS-Atmel/CMSIS/Device/ATMEL)
-# ARDUINO API
-set (ARDUINO_API_DIR ${ARDUINO_FROM_SOURCE_DIR}/lib/arduino_core/ArduinoCore-API)
-
 add_compile_definitions(CRYSTALLESS)
 
 # USB build flags from ArduinoCore-samd (boards.txt)
