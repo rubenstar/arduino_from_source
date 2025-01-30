@@ -14,6 +14,7 @@ target_include_directories(arduinoIncludeDirs INTERFACE
     ${ARDUINO_CMSIS_DIR}/                       # samd.h 
     ${ARDUINO_CMSIS_DIR}/samd21/include         # samd21xxx.h 
     ${SAMD_DIR}/libraries/SPI                   # SPI.h
+    ${SAMD_DIR}/libraries/Wire                  # Wire.h
     ${SAMD_DIR}/variants/nano_33_iot            # variant.h
     ${SAMD_DIR}/cores/arduino                   # arduino.h / WVariant.h
     ${SAMD_DIR}/cores/arduino/USB               # All USB related headers
