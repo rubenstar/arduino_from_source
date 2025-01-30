@@ -18,7 +18,8 @@ set(CPU cortex-m0plus) # Cortex-M0+
 set(FLOAT soft)        # SAMD21G18A does not have a FPU
 set(ARM_ISA mthumb)    # Cortex-M0+ is Thumb only
 
-set(OPTIMISATION "-O0")
+#set(OPTIMISATION "-Os") # Needed for BLE module on Nano 33 IoT
+set(OPTIMISATION "-O0") 
 set(DEBUG "-ggdb")
 
 # Compilation flags (https://gcc.gnu.org/onlinedocs/gcc-14.1.0/gcc.pdf)
