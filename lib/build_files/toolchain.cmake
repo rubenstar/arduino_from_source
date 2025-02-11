@@ -18,9 +18,8 @@ set(CPU cortex-m0plus) # Cortex-M0+
 set(FLOAT soft)        # SAMD21G18A does not have a FPU
 set(ARM_ISA mthumb)    # Cortex-M0+ is Thumb only
 
-#set(OPTIMISATION "-Os") # Needed for BLE module on Nano 33 IoT
-set(OPTIMISATION "-O0") 
-set(DEBUG "-ggdb")
+set(OPTIMISATION "-Os") # Needed for BLE module on Nano 33 IoT
+set(DEBUG "-gdwarf-4")
 
 # Compilation flags (https://gcc.gnu.org/onlinedocs/gcc-14.1.0/gcc.pdf)
 set(COMPILE_FLAGS 
@@ -29,6 +28,12 @@ set(COMPILE_FLAGS
     -mfloat-abi=${FLOAT};
     ${OPTIMISATION};
     ${DEBUG};
+    # Var tracking should be default already
+    -fvar-tracking;
+    -fvar-tracking-assignments;
+    -gvariable-location-views;
+    -gno-internal-reset-location-views;
+    -ginline-points;
     -Wall;                  # Enable all warnings
 #    -pedantic;             # Enable pedantic warnings
     -MD;                    # Generate dependency output file (a xxx.obj.d file for every xxx.obj file)
