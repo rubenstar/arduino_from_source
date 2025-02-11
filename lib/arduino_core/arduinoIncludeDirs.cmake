@@ -20,4 +20,5 @@ target_include_directories(arduinoIncludeDirs INTERFACE
     ${SAMD_DIR}/cores/arduino/USB               # All USB related headers
     ${ARM_CMSIS_DIR}/CMSIS/Core/Include         # only for core_cm0plus.h
     ${ARDUINO_API_DIR}/                         # A variety of API headers, mainly ArduinoAPI.h, needed by SAMD lib
+    ${ARDUINO_API_DIR}/api                      # Print.h
 )
