@@ -5,7 +5,6 @@ SRAM_SIZE = 0x8000;     /* 32kB */
 NVM_SIZE = 0x400;       /* 1kB */
 
 STACK_SIZE = 0x800;     /* 2kB */
-HEAP_SIZE = 0x800;      /* 2kB */
 
 MEMORY
 {
@@ -113,15 +112,7 @@ SECTIONS
         . = ALIGN(4);
         __bss_end__ = .;
     } > SRAM
-    
-    .heap :
-    {
-        __heap_start__ = .;
-        /* end is used by _sbrk syscall function supplied by libnosys.a */
-		PROVIDE(end = .);
-        . = . + HEAP_SIZE;
-        . = ALIGN(4);
-        __heap_end__ = .;
-    } > SRAM
 
+    /* end is used by _sbrk syscall function supplied by libnosys.a */
+	PROVIDE(end = .);
 }
